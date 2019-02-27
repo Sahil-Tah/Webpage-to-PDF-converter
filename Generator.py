@@ -1,14 +1,15 @@
-import pandas as pd
-import datetime
-from slugify import slugify
-
-now = datetime.datetime.now()
-
-df = pd.DataFrame([
-        {'package': 'PEPTize', 'student': 'Yashvant Singh', 'level': 'Level 1'}
-        # {'package': 'PlaceMe Mechanical', 'student': 'Rajeev Kumar', 'level': 'Level 2'},
-        # {'package': 'N2N Python', 'student': 'Gaurav Singh', 'level': 'Level 2'},
-        # {'package': 'PEPTize', 'student': 'Rakesh Sharma', 'level': 'Level 3'},
-    ])
-
 import pdfkit
+
+#pdfkit.from_file('Templates/index.html', 'certificate.pdf')
+
+style = {
+    'page-size': 'A4',
+    'margin-top': '0.75in',
+    'margin-right': '0.75in',
+    'margin-bottom': '0.75in',
+    'margin-left': '0.75in'
+}
+
+#pdfkit.from_file('Templates/index.html', 'Output/certificate.pdf')
+
+pdfkit.from_file('Templates/index.html', 'Output/certificate.pdf', options=style)
